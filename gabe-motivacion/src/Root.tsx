@@ -1,0 +1,17 @@
+import { Composition, Folder } from "remotion";
+import { LaRegla } from "./LaRegla/LaRegla";
+
+export const RemotionRoot: React.FC = () => {
+  return (
+    <Folder name="Gabe-Motivacion">
+      <Composition
+        id="LaReglaDel1"
+        component={LaRegla}
+        durationInFrames={1800}
+        fps={30}
+        width={1080}
+        height={1920}
+      />
+    </Folder>
+  );
+};
