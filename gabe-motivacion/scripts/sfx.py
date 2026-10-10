@@ -60,7 +60,7 @@ tt = t(0.25)
 save("stamp", env(np.tanh(3 * np.sin(2 * np.pi * (180 * np.exp(-tt * 20) + 60) * tt)) + 0.4 * rng.standard_normal(len(tt)) * np.exp(-tt * 60), 0.001, 0.08), 0.9)
 
 # base rítmica 120 bpm: bombo, hi-hat y bajo
-bpm = 120; beat = 60 / bpm; dur = 34.0
+bpm = 120; beat = 60 / bpm; dur = 50.0
 music = np.zeros(int(SR * dur))
 kick_t = t(0.3); kick = env(np.sin(2 * np.pi * np.cumsum(110 * np.exp(-kick_t * 18) + 45) / SR), 0.001, 0.12)
 hat_t = t(0.05); hat = env(rng.standard_normal(len(hat_t)), 0.0005, 0.012)

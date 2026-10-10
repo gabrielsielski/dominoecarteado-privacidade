@@ -37,8 +37,10 @@ DISPLAY = [
     "No necesitas cambiarlo todo. Necesitas empezar hoy.",
     "1%. Hoy. Sígueme para más motivación.",
 ]
-GAP = 0.1  # segundos entre frases
+# Pausa después de cada frase (segundos): más larga en los momentos de impacto.
+GAPS = [0.5, 0.5, 1.0, 0.5, 1.0, 1.0, 0.5, 1.0, 0.5, 0.5, 0.5, 0.0]
 LEAD = 0.15  # silencio inicial
+TAIL = 1.6  # cierre tras la última frase
 
 def trim(s, sr, thr=0.01):
     idx = np.where(np.abs(s) > thr)[0]
@@ -51,14 +53,14 @@ def trim(s, sr, thr=0.01):
 def main():
     models = sys.argv[1]
     voice = sys.argv[2] if len(sys.argv) > 2 else "em_alex"
-    speed = float(sys.argv[3]) if len(sys.argv) > 3 else 1.1
+    speed = float(sys.argv[3]) if len(sys.argv) > 3 else 0.85
     root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     k = Kokoro(f"{models}/kokoro-v1.0.onnx", f"{models}/voices-v1.0.bin")
     sr = 24000
     out = [np.zeros(int(LEAD * sr), dtype=np.float32)]
     t = LEAD
     timeline = []
-    for text, shown in zip(LINES, DISPLAY):
+    for text, shown, gap in zip(LINES, DISPLAY, GAPS):
         s, sr = k.create(text, voice=voice, speed=speed, lang="es")
         s = trim(s, sr)
         dur = len(s) / sr
@@ -73,12 +75,12 @@ def main():
             wl.append({"text": w, "start": round(acc, 3), "end": round(acc + d, 3)})
             acc += d
         timeline.append({"text": shown, "start": round(t, 3), "end": round(t + dur, 3), "words": wl})
-        out += [s.astype(np.float32), np.zeros(int(GAP * sr), dtype=np.float32)]
-        t += dur + GAP
+        out += [s.astype(np.float32), np.zeros(int(gap * sr), dtype=np.float32)]
+        t += dur + gap
     audio = np.concatenate(out)
     sf.write(f"{root}/public/narracion.wav", audio, sr)
     with open(f"{root}/src/LaRegla/timeline.json", "w") as f:
-        json.dump({"duration": round(t + 0.6, 3), "lines": timeline}, f, ensure_ascii=False, indent=1)
+        json.dump({"duration": round(t + TAIL, 3), "lines": timeline}, f, ensure_ascii=False, indent=1)
     print(f"duración: {t:.2f}s")
 
 main()
