@@ -25,3 +25,8 @@ Las ilustraciones vienen en cuadrículas; se recortan y se amplían x4 con Real-
 2. Descarga `RealESRGAN_x4plus_anime_6B.pth` de https://github.com/xinntao/Real-ESRGAN/releases (v0.2.2.4)
    y conviértelo: `pip install onnx onnxruntime && python3 scripts/esrgan_a_onnx.py anime6B.pth anime6B.onnx`.
 3. `python3 scripts/ampliar.py anime6B.onnx paneles/ ampliados/` y guarda como JPG en `public/gabe/`.
+
+## Música de fondo
+
+`python3 scripts/musica.py salida.wav 62 96` compone una base informativa (Lam–Fa–Do–Sol, 96 bpm) sin derechos de autor.
+Normalízala con `ffmpeg -i salida.wav -af loudnorm=I=-20:TP=-3 musica.mp3`.
