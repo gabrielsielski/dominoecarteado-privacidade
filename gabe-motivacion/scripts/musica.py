@@ -31,6 +31,8 @@ def note(freq, length, kind):
 
 def add(x, at, gain, pan=0.0):
     s = int(at * SR)
+    if s >= len(mix):
+        return
     e = min(s + len(x), len(mix))
     mix[s:e, 0] += x[: e - s] * gain * (1 - pan)
     mix[s:e, 1] += x[: e - s] * gain * (1 + pan)
