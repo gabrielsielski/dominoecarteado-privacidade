@@ -1,9 +1,18 @@
-# Narración (Kokoro)
+# Audio
+
+## Narración (Kokoro)
 
 1. `pip install kokoro-onnx soundfile` y descarga `kokoro-v1.0.onnx` y `voices-v1.0.bin`
    de https://github.com/thewh1teagle/kokoro-onnx/releases (model-files-v1.0) en una carpeta `MODELOS`.
-2. `python3 scripts/narracion_kokoro.py MODELOS SALIDA em_alex` genera `l00.wav` … `l11.wav`.
-3. Mezcla cada línea en su segundo del guion (0 5 9 12 20 27 32 35 41 46 51 56) en `public/narracion.mp3`
-   con ffmpeg `adelay` + `amix` + `loudnorm=I=-14`.
+2. `python3 scripts/narracion_kokoro.py MODELOS em_alex 1.1`
+   genera `public/narracion.wav` (frases seguidas, sin pausas) y `src/LaRegla/timeline.json`
+   (tiempos de cada frase y palabra). Las escenas y subtítulos se sincronizan solos con ese archivo.
 
-Video: `npm run dev` (Studio) o `npx remotion render LaReglaDel1 out/la-regla-del-1.mp4`.
+## Efectos y base
+
+`python3 scripts/sfx.py` sintetiza los efectos en `public/sfx/`.
+Luego: `ffmpeg -i public/sfx/beat.wav -b:a 160k public/sfx/beat.mp3 && rm public/sfx/beat.wav`.
+
+## Video
+
+`npm run dev` (Studio) o `npx remotion render LaReglaDel1 out/la-regla-del-1.mp4`.

@@ -1,0 +1,524 @@
+{
+ "duration": 31.017,
+ "lines": [
+  {
+   "text": "Si mejoras solo un 1% cada día…",
+   "start": 0.15,
+   "end": 2.574,
+   "words": [
+    {
+     "text": "Si",
+     "start": 0.15,
+     "end": 0.399
+    },
+    {
+     "text": "mejoras",
+     "start": 0.399,
+     "end": 0.958
+    },
+    {
+     "text": "solo",
+     "start": 0.958,
+     "end": 1.331
+    },
+    {
+     "text": "un",
+     "start": 1.331,
+     "end": 1.579
+    },
+    {
+     "text": "1%",
+     "start": 1.579,
+     "end": 1.828
+    },
+    {
+     "text": "cada",
+     "start": 1.828,
+     "end": 2.201
+    },
+    {
+     "text": "día…",
+     "start": 2.201,
+     "end": 2.574
+    }
+   ]
+  },
+  {
+   "text": "…nadie lo va a notar.",
+   "start": 2.674,
+   "end": 4.035,
+   "words": [
+    {
+     "text": "…nadie",
+     "start": 2.674,
+     "end": 3.077
+    },
+    {
+     "text": "lo",
+     "start": 3.077,
+     "end": 3.279
+    },
+    {
+     "text": "va",
+     "start": 3.279,
+     "end": 3.481
+    },
+    {
+     "text": "a",
+     "start": 3.481,
+     "end": 3.632
+    },
+    {
+     "text": "notar.",
+     "start": 3.632,
+     "end": 4.035
+    }
+   ]
+  },
+  {
+   "text": "Ni siquiera tú.",
+   "start": 4.135,
+   "end": 5.155,
+   "words": [
+    {
+     "text": "Ni",
+     "start": 4.135,
+     "end": 4.35
+    },
+    {
+     "text": "siquiera",
+     "start": 4.35,
+     "end": 4.887
+    },
+    {
+     "text": "tú.",
+     "start": 4.887,
+     "end": 5.155
+    }
+   ]
+  },
+  {
+   "text": "Al principio parece que no pasa nada. Un día, dos, un mes…",
+   "start": 5.255,
+   "end": 8.631,
+   "words": [
+    {
+     "text": "Al",
+     "start": 5.255,
+     "end": 5.445
+    },
+    {
+     "text": "principio",
+     "start": 5.445,
+     "end": 5.968
+    },
+    {
+     "text": "parece",
+     "start": 5.968,
+     "end": 6.349
+    },
+    {
+     "text": "que",
+     "start": 6.349,
+     "end": 6.587
+    },
+    {
+     "text": "no",
+     "start": 6.587,
+     "end": 6.777
+    },
+    {
+     "text": "pasa",
+     "start": 6.777,
+     "end": 7.062
+    },
+    {
+     "text": "nada.",
+     "start": 7.062,
+     "end": 7.395
+    },
+    {
+     "text": "Un",
+     "start": 7.395,
+     "end": 7.585
+    },
+    {
+     "text": "día,",
+     "start": 7.585,
+     "end": 7.87
+    },
+    {
+     "text": "dos,",
+     "start": 7.87,
+     "end": 8.156
+    },
+    {
+     "text": "un",
+     "start": 8.156,
+     "end": 8.346
+    },
+    {
+     "text": "mes…",
+     "start": 8.346,
+     "end": 8.631
+    }
+   ]
+  },
+  {
+   "text": "Pero el tiempo multiplica.",
+   "start": 8.731,
+   "end": 10.269,
+   "words": [
+    {
+     "text": "Pero",
+     "start": 8.731,
+     "end": 9.029
+    },
+    {
+     "text": "el",
+     "start": 9.029,
+     "end": 9.227
+    },
+    {
+     "text": "tiempo",
+     "start": 9.227,
+     "end": 9.624
+    },
+    {
+     "text": "multiplica.",
+     "start": 9.624,
+     "end": 10.269
+    }
+   ]
+  },
+  {
+   "text": "Al final del año serás 37 veces mejor.",
+   "start": 10.369,
+   "end": 13.236,
+   "words": [
+    {
+     "text": "Al",
+     "start": 10.369,
+     "end": 10.613
+    },
+    {
+     "text": "final",
+     "start": 10.613,
+     "end": 11.04
+    },
+    {
+     "text": "del",
+     "start": 11.04,
+     "end": 11.345
+    },
+    {
+     "text": "año",
+     "start": 11.345,
+     "end": 11.65
+    },
+    {
+     "text": "serás",
+     "start": 11.65,
+     "end": 12.077
+    },
+    {
+     "text": "37",
+     "start": 12.077,
+     "end": 12.321
+    },
+    {
+     "text": "veces",
+     "start": 12.321,
+     "end": 12.748
+    },
+    {
+     "text": "mejor.",
+     "start": 12.748,
+     "end": 13.236
+    }
+   ]
+  },
+  {
+   "text": "Y al revés también funciona.",
+   "start": 13.336,
+   "end": 15.036,
+   "words": [
+    {
+     "text": "Y",
+     "start": 13.336,
+     "end": 13.486
+    },
+    {
+     "text": "al",
+     "start": 13.486,
+     "end": 13.686
+    },
+    {
+     "text": "revés",
+     "start": 13.686,
+     "end": 14.036
+    },
+    {
+     "text": "también",
+     "start": 14.036,
+     "end": 14.486
+    },
+    {
+     "text": "funciona.",
+     "start": 14.486,
+     "end": 15.036
+    }
+   ]
+  },
+  {
+   "text": "Si empeoras un 1% cada día, al final del año casi no queda nada.",
+   "start": 15.136,
+   "end": 19.395,
+   "words": [
+    {
+     "text": "Si",
+     "start": 15.136,
+     "end": 15.351
+    },
+    {
+     "text": "empeoras",
+     "start": 15.351,
+     "end": 15.891
+    },
+    {
+     "text": "un",
+     "start": 15.891,
+     "end": 16.106
+    },
+    {
+     "text": "1%",
+     "start": 16.106,
+     "end": 16.322
+    },
+    {
+     "text": "cada",
+     "start": 16.322,
+     "end": 16.645
+    },
+    {
+     "text": "día,",
+     "start": 16.645,
+     "end": 16.969
+    },
+    {
+     "text": "al",
+     "start": 16.969,
+     "end": 17.185
+    },
+    {
+     "text": "final",
+     "start": 17.185,
+     "end": 17.562
+    },
+    {
+     "text": "del",
+     "start": 17.562,
+     "end": 17.832
+    },
+    {
+     "text": "año",
+     "start": 17.832,
+     "end": 18.101
+    },
+    {
+     "text": "casi",
+     "start": 18.101,
+     "end": 18.425
+    },
+    {
+     "text": "no",
+     "start": 18.425,
+     "end": 18.64
+    },
+    {
+     "text": "queda",
+     "start": 18.64,
+     "end": 19.018
+    },
+    {
+     "text": "nada.",
+     "start": 19.018,
+     "end": 19.395
+    }
+   ]
+  },
+  {
+   "text": "La diferencia no está en un gran día.",
+   "start": 19.495,
+   "end": 21.706,
+   "words": [
+    {
+     "text": "La",
+     "start": 19.495,
+     "end": 19.687
+    },
+    {
+     "text": "diferencia",
+     "start": 19.687,
+     "end": 20.264
+    },
+    {
+     "text": "no",
+     "start": 20.264,
+     "end": 20.456
+    },
+    {
+     "text": "está",
+     "start": 20.456,
+     "end": 20.745
+    },
+    {
+     "text": "en",
+     "start": 20.745,
+     "end": 20.937
+    },
+    {
+     "text": "un",
+     "start": 20.937,
+     "end": 21.129
+    },
+    {
+     "text": "gran",
+     "start": 21.129,
+     "end": 21.418
+    },
+    {
+     "text": "día.",
+     "start": 21.418,
+     "end": 21.706
+    }
+   ]
+  },
+  {
+   "text": "Está en lo pequeño que repites cada día.",
+   "start": 21.806,
+   "end": 24.146,
+   "words": [
+    {
+     "text": "Está",
+     "start": 21.806,
+     "end": 22.093
+    },
+    {
+     "text": "en",
+     "start": 22.093,
+     "end": 22.284
+    },
+    {
+     "text": "lo",
+     "start": 22.284,
+     "end": 22.475
+    },
+    {
+     "text": "pequeño",
+     "start": 22.475,
+     "end": 22.905
+    },
+    {
+     "text": "que",
+     "start": 22.905,
+     "end": 23.143
+    },
+    {
+     "text": "repites",
+     "start": 23.143,
+     "end": 23.573
+    },
+    {
+     "text": "cada",
+     "start": 23.573,
+     "end": 23.86
+    },
+    {
+     "text": "día.",
+     "start": 23.86,
+     "end": 24.146
+    }
+   ]
+  },
+  {
+   "text": "No necesitas cambiarlo todo. Necesitas empezar hoy.",
+   "start": 24.246,
+   "end": 27.452,
+   "words": [
+    {
+     "text": "No",
+     "start": 24.246,
+     "end": 24.463
+    },
+    {
+     "text": "necesitas",
+     "start": 24.463,
+     "end": 25.061
+    },
+    {
+     "text": "cambiarlo",
+     "start": 25.061,
+     "end": 25.659
+    },
+    {
+     "text": "todo.",
+     "start": 25.659,
+     "end": 26.039
+    },
+    {
+     "text": "Necesitas",
+     "start": 26.039,
+     "end": 26.637
+    },
+    {
+     "text": "empezar",
+     "start": 26.637,
+     "end": 27.126
+    },
+    {
+     "text": "hoy.",
+     "start": 27.126,
+     "end": 27.452
+    }
+   ]
+  },
+  {
+   "text": "1%. Hoy. Sígueme para más motivación.",
+   "start": 27.552,
+   "end": 30.317,
+   "words": [
+    {
+     "text": "1%.",
+     "start": 27.552,
+     "end": 27.866
+    },
+    {
+     "text": "Hoy.",
+     "start": 27.866,
+     "end": 28.243
+    },
+    {
+     "text": "Sígueme",
+     "start": 28.243,
+     "end": 28.809
+    },
+    {
+     "text": "para",
+     "start": 28.809,
+     "end": 29.186
+    },
+    {
+     "text": "más",
+     "start": 29.186,
+     "end": 29.5
+    },
+    {
+     "text": "motivación.",
+     "start": 29.5,
+     "end": 30.317
+    }
+   ]
+  }
+ ]
+}
