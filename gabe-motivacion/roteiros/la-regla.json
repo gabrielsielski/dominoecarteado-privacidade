@@ -1,0 +1,71 @@
+{
+ "voz": "em_alex",
+ "idioma": "es",
+ "velocidad": 0.85,
+ "inicio": 0.15,
+ "cierre": 1.6,
+ "audio": "public/narracion.wav",
+ "timeline": "src/LaRegla/timeline.json",
+ "frases": [
+  {
+   "habla": "Si mejoras solo un uno por ciento cada día…",
+   "texto": "Si mejoras solo un 1% cada día…",
+   "pausa": 0.5
+  },
+  {
+   "habla": "…nadie lo va a notar.",
+   "texto": "…nadie lo va a notar.",
+   "pausa": 0.5
+  },
+  {
+   "habla": "Ni siquiera tú.",
+   "texto": "Ni siquiera tú.",
+   "pausa": 1.0
+  },
+  {
+   "habla": "Al principio parece que no pasa nada. Un día, dos, un mes…",
+   "texto": "Al principio parece que no pasa nada. Un día, dos, un mes…",
+   "pausa": 0.5
+  },
+  {
+   "habla": "Pero el tiempo multiplica.",
+   "texto": "Pero el tiempo multiplica.",
+   "pausa": 1.0
+  },
+  {
+   "habla": "Al final del año serás treinta y siete veces mejor.",
+   "texto": "Al final del año serás 37 veces mejor.",
+   "pausa": 1.0
+  },
+  {
+   "habla": "Y al revés también funciona.",
+   "texto": "Y al revés también funciona.",
+   "pausa": 0.5
+  },
+  {
+   "habla": "Si empeoras un uno por ciento cada día, al final del año casi no queda nada.",
+   "texto": "Si empeoras un 1% cada día, al final del año casi no queda nada.",
+   "pausa": 1.0
+  },
+  {
+   "habla": "La diferencia no está en un gran día.",
+   "texto": "La diferencia no está en un gran día.",
+   "pausa": 0.5
+  },
+  {
+   "habla": "Está en lo pequeño que repites cada día.",
+   "texto": "Está en lo pequeño que repites cada día.",
+   "pausa": 0.5
+  },
+  {
+   "habla": "No necesitas cambiarlo todo. Necesitas empezar hoy.",
+   "texto": "No necesitas cambiarlo todo. Necesitas empezar hoy.",
+   "pausa": 0.5
+  },
+  {
+   "habla": "Uno por ciento. Hoy. Sígueme para más motivación.",
+   "texto": "1%. Hoy. Sígueme para más motivación.",
+   "pausa": 0.0
+  }
+ ]
+}

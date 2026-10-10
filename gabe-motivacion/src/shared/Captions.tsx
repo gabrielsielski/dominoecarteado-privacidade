@@ -1,11 +1,13 @@
 import { Easing, interpolate, useCurrentFrame, useVideoConfig } from "remotion";
 import { colors, fontFamily } from "./theme";
-import { lines } from "./timing";
 
 const CHUNK = 3;
 
+type Word = { readonly text: string; readonly start: number; readonly end: number };
+type Line = { readonly start: number; readonly words: readonly Word[] };
+
 // Subtítulos estilo Shorts: bloques de hasta 3 palabras, la palabra actual en dorado.
-export const Captions = () => {
+export const Captions: React.FC<{ readonly lines: readonly Line[] }> = ({ lines }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   const t = frame / fps;

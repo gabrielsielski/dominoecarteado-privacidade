@@ -1,7 +1,7 @@
 import { AbsoluteFill, Easing, Img, interpolate, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
 
 type Props = {
-  readonly image: string;
+  readonly image: string; // ruta dentro de public/
   readonly zoom?: [number, number];
   readonly pan?: [number, number]; // desplazamiento vertical en px (inicio, fin)
   readonly tint?: string;
@@ -22,7 +22,7 @@ export const Shot: React.FC<Props> = ({ image, zoom = [1.04, 1.14], pan = [0, -4
           translate: `0px ${interpolate(f, [0, durationInFrames], pan, clamp)}px`,
         }}
       >
-        <Img src={staticFile(`gabe/${image}.jpg`)} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "50% 20%" }} />
+        <Img src={staticFile(image)} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "50% 20%" }} />
       </AbsoluteFill>
       {tint ? <AbsoluteFill style={{ backgroundColor: tint, mixBlendMode: "multiply" }} /> : null}
       {/* degradado inferior para leer subtítulos */}
