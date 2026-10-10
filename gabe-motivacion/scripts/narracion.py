@@ -1,9 +1,19 @@
 """Genera la narración con Kokoro y la línea de tiempo de frases y palabras a partir de un guion JSON.
 
 Uso: python3 scripts/narracion.py <carpeta_modelos> roteiros/<guion>.json
-El guion define voz, idioma, velocidad, pausas y rutas de salida (ver roteiros/).
-"voz" puede ser un nombre de Kokoro o una mezcla {"pm_alex": 0.7, "am_adam": 0.3}.
-"filtro" (opcional) es una cadena de filtros de ffmpeg aplicada al audio final (debe conservar la duración).
+
+Campos del guion:
+- "voz": nombre de Kokoro o mezcla {"pm_alex": 0.7, "am_adam": 0.3}
+- "idioma", "velocidad", "inicio", "cierre", "audio", "timeline"
+- "filtro" (opcional): filtros de ffmpeg para el audio final (deben conservar la duración)
+- "frases": lista de {"habla", "texto", "pausa"} o, para controlar el ritmo dentro de la frase,
+  {"partes": [{"habla", "texto", "pausa", "velocidad"?}, ...]}.
+  Cada parte se genera por separado (la entonación de "?" y "." queda limpia) y se une con
+  silencios exactos. "velocidad" de la parte multiplica la velocidad general.
+
+Guía de pausas (estilo orador, adaptada a Shorts):
+  coma/respiro 0.15–0.25 s · antes de un dato clave 0.3–0.45 s · fin de idea 0.4–0.5 s
+  después de una pregunta, antes de la respuesta 0.6–0.9 s · cambio de tema 0.6–0.8 s
 """
 import json, os, subprocess, sys
 import numpy as np
@@ -18,6 +28,18 @@ def trim(s, sr, thr=0.01):
     b = min(idx[-1] + int(0.06 * sr), len(s))
     return s[a:b]
 
+def words_timed(text, start, dur):
+    # Tiempo de cada palabra proporcional a su longitud (aproximación).
+    words = text.split()
+    weights = [len(w) + 2 for w in words]
+    total = sum(weights)
+    acc, out = start, []
+    for w, wt in zip(words, weights):
+        d = dur * wt / total
+        out.append({"text": w, "start": round(acc, 3), "end": round(acc + d, 3)})
+        acc += d
+    return out
+
 def main():
     models, guion = sys.argv[1], sys.argv[2]
     root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -31,24 +53,21 @@ def main():
     t = cfg["inicio"]
     timeline = []
     for fr in cfg["frases"]:
-        s, sr = k.create(fr["habla"], voice=voz, speed=cfg["velocidad"], lang=cfg["idioma"])
-        s = trim(s, sr)
-        dur = len(s) / sr
-        # Tiempo de cada palabra proporcional a su longitud (aproximación).
-        words = fr["texto"].split()
-        weights = [len(w) + 2 for w in words]
-        total = sum(weights)
-        acc = t
-        wl = []
-        for w, wt in zip(words, weights):
-            d = dur * wt / total
-            wl.append({"text": w, "start": round(acc, 3), "end": round(acc + d, 3)})
-            acc += d
-        timeline.append({"text": fr["texto"], "start": round(t, 3), "end": round(t + dur, 3), "words": wl})
-        out += [s.astype(np.float32), np.zeros(int(fr["pausa"] * sr), dtype=np.float32)]
-        t += dur + fr["pausa"]
-    os.makedirs(os.path.dirname(f"{root}/{cfg['audio']}"), exist_ok=True)
+        partes = fr.get("partes") or [{"habla": fr["habla"], "texto": fr["texto"], "pausa": fr["pausa"]}]
+        line_start, words = t, []
+        for i, p in enumerate(partes):
+            speed = cfg["velocidad"] * p.get("velocidad", 1.0)
+            s, sr = k.create(p["habla"], voice=voz, speed=speed, lang=cfg["idioma"])
+            s = trim(s, sr)
+            dur = len(s) / sr
+            words += words_timed(p.get("texto", p["habla"]), t, dur)
+            line_end = t + dur
+            out += [s.astype(np.float32), np.zeros(int(p["pausa"] * sr), dtype=np.float32)]
+            t += dur + p["pausa"]
+        text = " ".join(p.get("texto", p["habla"]) for p in partes)
+        timeline.append({"text": text, "start": round(line_start, 3), "end": round(line_end, 3), "words": words})
     dest = f"{root}/{cfg['audio']}"
+    os.makedirs(os.path.dirname(dest), exist_ok=True)
     if cfg.get("filtro"):
         crudo = dest + ".crudo.wav"
         sf.write(crudo, np.concatenate(out), sr)
