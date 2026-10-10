@@ -25,7 +25,7 @@ export const Captions = () => {
         position: "absolute",
         left: 70,
         right: 70,
-        top: 1330,
+        top: 1400,
         display: "flex",
         flexWrap: "wrap",
         justifyContent: "center",

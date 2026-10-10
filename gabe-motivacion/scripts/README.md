@@ -16,3 +16,12 @@ Luego: `ffmpeg -i public/sfx/beat.wav -b:a 160k public/sfx/beat.mp3 && rm public
 ## Video
 
 `npm run dev` (Studio) o `npx remotion render LaReglaDel1 out/la-regla-del-1.mp4`.
+
+## Ilustraciones (public/gabe/)
+
+Las ilustraciones vienen en cuadrículas; se recortan y se amplían x4 con Real-ESRGAN (anime 6B) vía ONNX, sin PyTorch:
+
+1. `python3 scripts/recortar_paneles.py cuadricula.png A paneles/` (detecta los márgenes blancos).
+2. Descarga `RealESRGAN_x4plus_anime_6B.pth` de https://github.com/xinntao/Real-ESRGAN/releases (v0.2.2.4)
+   y conviértelo: `pip install onnx onnxruntime && python3 scripts/esrgan_a_onnx.py anime6B.pth anime6B.onnx`.
+3. `python3 scripts/ampliar.py anime6B.onnx paneles/ ampliados/` y guarda como JPG en `public/gabe/`.
