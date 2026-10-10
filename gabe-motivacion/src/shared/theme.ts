@@ -15,4 +15,5 @@ export const colors = {
   muted: "#8a8a99",
   gold: "#ffc53d",
   red: "#ff4d4f",
+  green: "#3ddc84",
 };
